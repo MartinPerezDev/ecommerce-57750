@@ -1,26 +1,18 @@
-import NavBar from "./components/NavBar"
-import imgJoystick from "./assets/joystick.jpg";
+import EjemploProps from "./components/Examples/EjemploProps"
+import EjemploContador from "./components/Examples/EjemploContador";
 import "./App.css";
 
 function App() {
-  const saludo = "Hola mundo, como estan";
-
-  //estilos como objeto
-
-  const styleh1 = {
-    color: "red",
-    backgroundColor: "lime",
-  };
 
   return (
     <div>
-      <NavBar />
-      <h1 style={{ color: "blue", border: "1px solid purple" }}>{saludo}</h1>
-      <h2 className="texto-h2">Otro texto</h2>
-      <img src={imgJoystick} />
-      <div>
-        
-      </div>
+      <h1>Hola Mundo!</h1>
+      <h2>Como estan??</h2>
+
+      <EjemploContador />
+
+      <EjemploProps msj="Prop enviada desde el componente App" image="https://th.bing.com/th/id/R.40252aa897d6c78e0ad2affd40b39c4a?rik=gm3AYOmqhi7wOA&riu=http%3a%2f%2fcdn1.gamepur.com%2fimages%2ffeature%2fThrustmaster-T-Flight.jpg&ehk=2xLr2jA3CX6v7mCRIq8oy7zSX3r5DI%2fEgq3WtBttdUc%3d&risl=&pid=ImgRaw&r=0" />
+      <EjemploProps msj="Este es otro mensaje" image="https://th.bing.com/th/id/OIP.HY3I2vLel8eRqzkO2wYE5gHaHa?rs=1&pid=ImgDetMain" />
     </div>
   );
 }
