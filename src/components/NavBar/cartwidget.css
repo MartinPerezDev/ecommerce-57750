@@ -1,0 +1,8 @@
+.cartwidget {
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+}
+.cartwidget .number{
+  padding: 0 5px;
+}

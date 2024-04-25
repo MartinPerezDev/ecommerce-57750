@@ -1,12 +1,14 @@
-import EjemploContador from "./components/Examples/EjemploContador";
-import ItemCount from "./components/ItemCount/ItemCount";
+import NavBar from "./components/NavBar/NavBar";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+
 import "./App.css";
 
 function App() {
 
   return (
     <div>
-      <ItemCount stock={10} />
+      <NavBar />
+      <ItemListContainer saludo="Bienvenido a mi ecommerce" />
     </div>
   );
 }
