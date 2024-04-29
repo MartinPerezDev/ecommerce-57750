@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
-import "./itemlistcontainer.css"
+import "./itemlistcontainer.css";
 
 import getProducts from "../../data/data";
 
@@ -21,9 +21,9 @@ const ItemListContainer = ({ saludo }) => {
   }, []);
 
   return (
-    <div>
-      <p>{saludo}</p>
-      <ItemList products = {products} />
+    <div className="item-list-container">
+      <h2 className="title-item-list-container">{saludo}</h2>
+      <ItemList products={products} />
     </div>
   );
 };
