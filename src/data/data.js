@@ -36,7 +36,7 @@ const products = [
     image: "/image/counter-strike-2.jpg"
   },
   {
-    id: "Axasd1231",
+    id: "Axasd12",
     name: "7 days to die",
     description: "Description 1",
     price: 450,
