@@ -1,0 +1,22 @@
+.item-detail{
+  width: 100%;
+  min-height: 95vh;
+  display: flex;
+}
+.image-detail{
+  width: 25%;
+  padding: 40px;
+}
+.image-detail img{
+  width: 100%;
+}
+.content-detail{
+  width: 75%;
+  padding: 0 20px;
+}
+.name-detail{
+  font-size: 35px;
+}
+.text-detail{
+  font-size: 20px;
+}

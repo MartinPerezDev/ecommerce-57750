@@ -7,12 +7,12 @@ import "./navbar.css"
 const NavBar = () => {
   return (
     <nav className="navbar">
-      <Link to="/" className="brand">
+      <Link to="/" className="brand link-navbar">
         <img className="logo" src={epicLogo} alt="logo epic" />
       </Link>
       <ul className="categorias">
-        <Link to="/category/shooter" className="categoria">Shooter</Link>
-        <Link to="/category/survival" className="categoria">Survival</Link>
+        <Link to="/category/shooter" className="categoria link-navbar">Shooter</Link>
+        <Link to="/category/survival" className="categoria link-navbar">Survival</Link>
       </ul>
       <CartWidget />
     </nav>

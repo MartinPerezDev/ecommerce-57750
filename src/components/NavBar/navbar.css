@@ -27,3 +27,11 @@
 .navbar .categorias .categoria{
   padding-right: 20px;
 }
+.link-navbar{
+  font-weight: 400;
+  color: rgb(143, 143, 143);
+  text-decoration: none;
+}
+.link-navbar:hover{
+  color: rgb(255, 255, 255);
+}

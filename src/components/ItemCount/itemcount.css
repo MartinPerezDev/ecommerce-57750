@@ -1,0 +1,33 @@
+.itemcount{
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  font-size: 20px;
+}
+.controls-itemcount{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.button-controls{
+  color: white;
+  background-color: rgb(61, 61, 61);
+  border: none;
+  width: 30px;
+  height: 30px;
+  font-size: 25px;
+  border-radius: 5px;
+}
+.button-controls:hover , .submit-itemcount:hover{
+  cursor: pointer;
+  background-color: rgb(87, 87, 87);
+}
+.submit-itemcount{
+  color: white;
+  background-color: rgb(61, 61, 61);
+  border: none;
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+}
