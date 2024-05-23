@@ -1,3 +1,6 @@
+import db from "../db/db.js";
+import { addDoc, collection } from "firebase/firestore";
+
 const products = [
   {
     id: "Axasd1231",
@@ -34,17 +37,31 @@ const products = [
     stock: 2,
     category: "shooter",
     image: "/image/counter-strike-2.jpg"
+  },
+  {
+    id: "Asddddd",
+    name: "Fall Guys",
+    description: "Un 'party game' de minijuegos, pero con las dinámicas de eliminación propias de un battle royale. Fall Guys: Ultimate Knockout es una divertida propuesta para hasta 60 jugadores, que compiten ronda a ronda para llevarse la corona mientras luchan contra obstáculos de lo más extraños, superan a competidores ingobernables y se imponen a las inflexibles leyes de la física para evitar la humillación y la eliminación.",
+    price: 400,
+    stock: 10,
+    category: "family",
+    image: "/image/fall-guys.webp"
+  },
+  {
+    id: "Kklmreww22",
+    name: "Stumble Guys",
+    description: "Stumble Guys es un juego multijugador masivo de eliminación en grupo en el que hasta 32 jugadores podrán competir en línea avanzando ronda tras ronda en un caos cada vez mayor para intentar convertirse en el último superviviente. Si caes, como participantes tendrás que empezar de nuevo y correr lo más rápido que puedas en este éxito party.",
+    price: 55,
+    stock: 4,
+    category: "family",
+    image: "/image/stumble-guys.webp"
   }
 ]
 
-//obtener productos
-const getProducts = () => {
-  return new Promise((resolve, reject) => {
-    //simulamos un retraso de red
-    setTimeout(() => {
-      resolve(products)
-    }, 2000);
+const seedProducts = () => {
+  products.map(({ id, ...rest }) =>{
+    addDoc(collection(db, "products"), rest)
   });
-};
+}
 
-export default getProducts
+seedProducts()

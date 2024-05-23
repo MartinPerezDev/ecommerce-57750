@@ -13,6 +13,7 @@ const NavBar = () => {
       <ul className="categorias">
         <Link to="/category/shooter" className="categoria link-navbar">Shooter</Link>
         <Link to="/category/survival" className="categoria link-navbar">Survival</Link>
+        <Link to="/category/family" className="categoria link-navbar">Family</Link>
       </ul>
       <CartWidget />
     </nav>

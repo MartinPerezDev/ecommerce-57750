@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
-import getProducts from "../../data/data";
 import { useParams } from "react-router-dom";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import db from "../../db/db.js";
 
 import "./itemlistcontainer.css";
 
@@ -10,38 +11,47 @@ const ItemListContainer = () => {
   const [loading, setLoading] = useState(false);
   const { idCategory } = useParams();
 
-  useEffect(() => {
-    //mostrar pantalla de cargando...
-    setLoading(true);
+  const getProducts = () => {
+    const productsRef = collection(db, "products")
+    getDocs(productsRef)
+      .then((productsDb)=> {
 
-    getProducts()
-      .then((respuesta) => {
-        if (idCategory) {
-          //filtrar la data por la categoria que almacena idCategory
-          const productsFilter = respuesta.filter(
-            (productRes) => productRes.category === idCategory
-          );
-          setProducts(productsFilter);
-        } else {
-          //al no existir categoria guardamos todos los productos
-          setProducts(respuesta);
-        }
+        //formateamos correctamente la data recibida de la db
+        const data = productsDb.docs.map( (product)=> {
+          return { id: product.id, ...product.data() }
+        })
+
+        setProducts(data)
       })
-      .catch((error) => {
-        console.error(error);
+  }
+
+  const getProductsByCategory = () => {
+    const productsRef = collection(db, "products")
+    const q = query(productsRef, where("category", "==", idCategory) )
+    getDocs(q)
+      .then((productsDb)=> {
+
+        //formateamos correctamente la data recibida de la db
+        const data = productsDb.docs.map( (product)=> {
+          return { id: product.id, ...product.data() }
+        })
+
+        setProducts(data)
       })
-      .finally(() => {
-        //ocultamos la pantalla de cargando
-        setLoading(false);
-      });
+  }
+
+  useEffect(() => {
+    if(idCategory){
+      getProductsByCategory()
+    }else{
+      getProducts()
+    }
   }, [idCategory]);
 
   return (
     <div className="item-list-container">
       <h2 className="title-item-list-container">
-        {idCategory
-          ? `Filtrado por categoria: ${idCategory}`
-          : "Bienvenidos a mi ecommerce"}
+        {idCategory ? `Filtrado por categoria: ${idCategory}` : "Bienvenidos a mi ecommerce"}
       </h2>
       {loading ? <div>Cargando...</div> : <ItemList products={products} />}
     </div>
