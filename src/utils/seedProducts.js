@@ -64,4 +64,4 @@ const seedProducts = () => {
   });
 }
 
-seedProducts()
+//seedProducts()
