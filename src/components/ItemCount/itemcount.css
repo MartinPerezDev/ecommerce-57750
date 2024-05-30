@@ -1,3 +1,8 @@
+.cart{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
 .itemcount{
   display: flex;
   flex-direction: column;
@@ -30,4 +35,30 @@
   width: 100%;
   height: 30px;
   border-radius: 5px;
+}
+.button-link{
+  color: white;
+  background-color: rgb(61, 61, 61);
+  border: none;
+  height: 30px;
+  border-radius: 5px;
+  padding: 10px 25px;
+  text-decoration: none;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button-delete{
+  color: white;
+  background-color: rgb(105, 4, 4);
+  border: none;
+  height: 30px;
+  border-radius: 5px;
+  padding: 10px 25px;
+  text-decoration: none;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

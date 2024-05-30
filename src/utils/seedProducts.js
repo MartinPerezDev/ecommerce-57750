@@ -55,6 +55,33 @@ const products = [
     stock: 4,
     category: "family",
     image: "/image/stumble-guys.webp"
+  },
+  {
+    id: "Kklmreww12",
+    name: "Grand Theft Auto VI",
+    description: "GTA 6 es un videojuego de acción en mundo abierto que busca dar continuidad una década más a la muy exitosa saga desarrollada y editada por Rockstar Games. Estará ambientado en Vice City, como el mítico título de la franquicia de la generación de PS2 y Xbox, y contará con dos protagonistas estarían influenciados por Bonnie & Clyde, dos fugitivos y ladrones muy populares a comienzos del siglo XX en EE.UU. Por el momento no se ha entrado en más detalles, pero los jugadores pueden esperar un lanzamiento en 2025 con todo el ADN de la franquicia aún más salvaje y explosivo si cabe.",
+    price: 160,
+    stock: 2,
+    category: "survival",
+    image: "https://i.3djuegos.com/juegos/16751/grand_theft_auto_vi/fotos/ficha/grand_theft_auto_vi-5854700.webp"
+  },
+  {
+    id: "Kklm1eww12",
+    name: "The Plucky Squire",
+    description: "The Plucky Squire es un videojuego de acción, aventura y plataformas donde personajes de los libros de cuentos descubren un mundo tridimensional fuera de las páginas donde habitan. El videojuego invita a resolver acertijos, boxear tejones, volar con un jetpack y, en definitiva, disfrutar de todo tipo de mini-desafios encantadores y sorprendentes mientras el protagonista trata de convertirse en el héroe de un libro de cuentos viviente.",
+    price: 200,
+    stock: 20,
+    category: "family",
+    image: "https://i.3djuegos.com/juegos/18560/the_plucky_squire/fotos/ficha/the_plucky_squire-5679026.webp"
+  },
+  {
+    id: "Ags12333",
+    name: "Call of Duty: Black Ops 6",
+    description: "La saga de acción-shooter multijugador más exitosa del mercado regresa en 2024 con Call of Duty: Black Ops 6. Por el momento no hay muchos detalles que compartir, pero se espera que su anuncio se produzca antes del inicio del verano.",
+    price: 500,
+    stock: 6,
+    category: "shooter",
+    image: "https://i.3djuegos.com/juegos/19728/call_of_duty_black_ops_6/fotos/ficha/call_of_duty_black_ops_6-5892218.webp"
   }
 ]
 
@@ -62,6 +89,7 @@ const seedProducts = () => {
   products.map(({ id, ...rest }) =>{
     addDoc(collection(db, "products"), rest)
   });
+  return
 }
 
-//seedProducts()
+seedProducts()

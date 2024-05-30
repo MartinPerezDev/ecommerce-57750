@@ -1,8 +1,16 @@
-# React + Vite
+# Ecommerce Epic Games
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+##### `Dev - Martin Perez`
 
-Currently, two official plugins are available:
+<div style="display: flex">
+  <img src="https://th.bing.com/th/id/OIP.K-4RqDC6zFrpAG31ayDDOgHaHa?rs=1&pid=ImgDetMain" width="50" />
+  <img src="https://th.bing.com/th/id/OIP.K-4RqDC6zFrpAG31ayDDOgHaHa?rs=1&pid=ImgDetMain" width="50" />
+</div>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Descripción
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem soluta ipsam quas aperiam suscipit veniam deleniti incidunt error tenetur explicabo eum, illo natus, quia architecto impedit consectetur pariatur ducimus amet!
+
+## Dependencias
+`React` `Firebase` `Yup`
+
+## Contacto

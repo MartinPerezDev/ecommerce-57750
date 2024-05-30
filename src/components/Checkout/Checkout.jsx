@@ -4,6 +4,10 @@ import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { addDoc, collection, doc, setDoc, Timestamp } from "firebase/firestore";
 import db from "../../db/db.js";
+import validateForm from "../../utils/validationYup.js";
+import { toast } from "react-toastify";
+
+import "./checkout.css"
 
 const Checkout = () => {
   const [datosForm, setDatosForm] = useState({
@@ -18,7 +22,7 @@ const Checkout = () => {
     setDatosForm({ ...datosForm, [event.target.name]: event.target.value });
   };
 
-  const handleSubmitForm = (event) => {
+  const handleSubmitForm = async(event) => {
     event.preventDefault();
     //le damos formato a los datos que vamos a subir
     const orden = {
@@ -27,7 +31,17 @@ const Checkout = () => {
       fecha: Timestamp.fromDate(new Date()),
       total: precioTotal(),
     };
-    generateOrder(orden);
+    try {
+      //antes de subir la orden, validamos el formulario
+      const response = await validateForm(datosForm)
+      if(response.status === "success"){
+        generateOrder(orden);
+      }else{
+        toast.warning(response.message)
+      }
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   //subimos nuestra orden a firebase
@@ -60,9 +74,9 @@ const Checkout = () => {
   }
 
   return (
-    <div>
+    <div className="checkout">
       {idOrden ? (
-        <div>
+        <div className="order-generated">
           <h2>Orden generada con exito!🤩</h2>
           <p> guarde el id de su orden: {idOrden} </p>
         </div>
